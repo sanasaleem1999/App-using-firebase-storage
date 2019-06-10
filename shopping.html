@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link href="main.css" rel="stylesheet" type="text/css"/>
+     <title>Fire storage</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!--below is the code for javascript-->
+    <!--modal trigger-->
+    <button class=" firstbutton waves-effect waves-light btn blue-grey darken-3"><a class="modal-trigger white-text" data-target="adddata">Add Data</a></button>
+    <!--modal structure ends here-->
+    <div id="adddata" class="modal">
+        <div class="modal-content">
+                        <form class="col s12" id="add-info">
+                               <div class="input-field col s6">
+                                  <i class="material-icons prefix">account_circle</i>
+                                  <input type="text" name="name" class="validate" required id="yourname"/>
+                                  <label for="yourname">Name:</label>
+                               </div>
+                               <div class="input-field col s6">
+                                   <i class="material-icons prefix">flag</i>
+                                   <input type="text" name="country" class="validate" id="yourcountry" required/>
+                                   <label for="yourcountry">Country:</label>
+                               </div>
+                                 <div class="input-field col s6">
+                                     <i class="material-icons prefix">email</i>
+                                     <input type="email" name="email" id="youremail" class="validate" required/>
+                                     <label for="youremail">Email:</label>
+                                 </div>
+                                 <div class="input-field col s6">
+                                     <i class="material-icons prefix">contacts</i>
+                                     <input type="number" name="number" id="yournumber" class="validate" required/>
+                                     <label for="yournumber">Contact Info:</label>
+                                 </div>
+                                 <button class="btn waves-effect waves-light">Add Data</button>
+                         </form>
+                    </div>
+                    <!--form ends here-->
+    </div>
+    <!--modal ends here-->
+    <div class="row" id="connectmain"></div>
+  
+
+    </div> <!--wrapper ends here-->
+
+
+
+
+
+
+  
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCR8uRnJ5wHnsNXqJniU7I3cs8wlraF1Bk",
+    authDomain: "shopping-account-77382.firebaseapp.com",
+    databaseURL: "https://shopping-account-77382.firebaseio.com",
+    projectId: "shopping-account-77382",
+    storageBucket: "shopping-account-77382.appspot.com",
+    messagingSenderId: "944670232256",
+    appId: "1:944670232256:web:391397f3db2b1d67"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  //lets make auth anfd firestore references in order to store data from database
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+ // db.settings ({ timestampsInSnapshots: true});
+  //update firestore settings if u are using firestore version 5 but if 4 then no need to add this
+ // db.settings({timestampInSnapShots: true});
+</script>
+
+
+     <script src="auth.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
